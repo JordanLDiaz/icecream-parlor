@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Icecream Parlor</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<!-- SECTION Debug -->
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="debug">
+
+  <header class="container-fluid">
+    <!-- SECTION this is my navbar/name of shop -->
+    <section class="row p-2 bg-success">
+      <div class="col-12">
+        <h1 class="text-center">Icecream Parlor</h1>
+      </div>
+    </section>
+  </header>
+
+  <main class="container-fluid">
+
+    <!-- SECTION this is the rest of my page with menu AND receipt -->
+    <d class="row bg-info">
+
+      <!-- SECTION this is my Menu section -->
+      <div class="col-12 col-md-8 card-1">
+        <div class="row text-center">
+          <div class="col-12">
+            <h2>Menu</h2>
+          </div>
+
+          <!-- SECTION this is my toppings -->
+          <div class="row">
+            <div class="col-12">
+              <h3>Toppings</h3>
+            </div>
+
+            <!-- SECTION topping images w/prices -->
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="sprinkles" onclick="selectTopping('Sprinkles')">
+              <div class="card-body">
+                <p class="card-text"> Sprinkles $2 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1585503100597-d70e5dc45d81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                class="img-fluid" class="card-img-top" alt="chocolate-chips" onclick="selectTopping('Chocolate Chips')">
+              <div class="card-body">
+                <p class="card-text"> Chocolate Chips $2 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1586195831749-9fc3b289b4e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvY29udXQlMjBmbGFrZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                class="img-fluid" class="card-img-top" alt="coconut-flakes" onclick="selectTopping('Coconut Flakes')">
+              <div class="card-body">
+                <p class="card-text"> Coconut Flakes $2 </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION this is my vessels -->
+          <div class="row">
+            <div class="col-12">
+              <h3>Vessels</h3>
+            </div>
+
+            <!-- SECTION this is my images/prices for vessels -->
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="waffle-cone" onclick="selectVessel('Waffle Cone')">
+              <div class="card-body">
+                <p class="card-text"> Waffle Cone $3 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="waffle-bowl" onclick="selectVessel('Waffle Bowl')">
+              <div class="card-body">
+                <p class="card-text"> Waffle Bowl $4 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="dipped-cone" onclick="selectVessel('Dipped Cone')">
+              <div class="card-body">
+                <p class="card-text"> Dipped Cones $5 </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION this is my flavors -->
+          <div class="row">
+            <div class="col-12">
+              <h3>Flavors</h3>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="vanilla" onclick="selectIceCream('Vanilla')">
+              <div class="card-body">
+                <p class="card-text"> Vanilla $3 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="chocolate" onclick="selectIceCream('Chocolate')">
+              <div class="card-body">
+                <p class="card-text"> Chocolate $3 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="cookies" onclick="selectIceCream('Cookies n Cream')">
+              <div class="card-body">
+                <p class="card-text"> Cookies'n'Cream $3 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="mint-choco" onclick="selectIceCream('Mint Chocolate Chip')">
+              <div class="card-body">
+                <p class="card-text"> Mint Chocolate Chip $4 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="Birthday-Cake" onclick="selectIceCream('Birthday Cake')">
+              <div class="card-body">
+                <p class="card-text"> Birthday Cake $4 </p>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img
+                src="https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5rbGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+                class="img-fluid" class="card-img-top" alt="cookie-dough" onclick="selectIceCream('Cookie Dough')">
+              <div class="card-body">
+                <p class="card-text"> Cookie Dough $4 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- SECTION this is my Receipt section -->
+      <div class="col-12 col-md-4 card-1">
+        <div class="row text-center">
+          <div class="col-12">
+            <h2>Receipt</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between">
+            <h5>Name</h5>
+            <h5>Qty.</h5>
+            <h5>Each</h5>
+            <h5>Total</h5>
+          </div>
+        </div>
+        <div id="cart"></div>
+        <!-- <div class="row">
+          <div class="col-md-12 d-flex justify-content-between">
+            <h5>Name</h5>
+            <h5>Qty.</h5>
+            <h5>Each</h5>
+            <h5>Total</h5>
+          
+          </div> -->
+        <div class="row">
+          <div class="col-12">
+            <h5>Total: <span>0</span></h5>
+          </div>
+          <div class="col-12">
+            <button class="">Pay</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </section>
+
+  </main>
+
+
+
+  <script src="app.js"></script>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

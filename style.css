@@ -1,0 +1,16 @@
+main {
+  min-height: 100vh;
+}
+
+.card-1 {
+  border: 3px solid whitesmoke;
+  border-radius: 5px;
+  padding: 1px;
+}
+
+.img-card {
+  border: 5px solid whitesmoke;
+  border-radius: 5px;
+  padding: 2px;
+  min-height: 20vh;
+}
