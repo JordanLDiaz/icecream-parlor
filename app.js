@@ -157,7 +157,7 @@ function drawReceipt() {
             <h5>${t.name}</h5>
             <h5>${t.quantity}</h5>
             <h5>${t.price}</h5>
-            <h5>Total</h5>
+            <h5>${t.quantity * t.price}</h5>
           </div>
       `
     }
@@ -172,7 +172,7 @@ function drawReceipt() {
           <h5>${v.name}</h5>
           <h5>${v.quantity}</h5>
           <h5>${v.price}</h5>
-          <h5>Total</h5>
+          <h5>${v.quantity * v.price}</h5>
         </div>
       `
       }
@@ -187,10 +187,19 @@ function drawReceipt() {
           <h5>${i.name}</h5>
           <h5>${i.quantity}</h5>
           <h5>${i.price}</h5>
-          <h5>Total</h5>
+          <h5>${i.quantity * i.price}</h5>
         </div>
       `
       }
       document.getElementById('cart').innerHTML = template
+      drawTotal()
     })
+}
+
+function drawTotal() {
+  let total = 0
+  toppings.forEach(t => {
+    total += t.price * t.quantity
+  })
+  document.getElementById('total').innerText = total.toFixed(2)
 }
